@@ -1,0 +1,29 @@
+{
+  "name": "cosmos-governance-fetcher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "export:proto": "buf export buf.build/cosmos/cosmos-sdk --path cosmos/gov/v1 --path cosmos/base/query/v1beta1/pagination.proto --path cosmos/base/v1beta1/coin.proto --output proto && buf export buf.build/googleapis/googleapis --path google/api/annotations.proto --path google/protobuf/timestamp.proto --output proto",
+    "gen:proto": "protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=generated --ts_proto_opt=esModuleInterop=true,forceLong=long,useOptionals=messages,outputServices=grpc-js,env=node -I proto proto/cosmos/gov/v1/query.proto proto/cosmos/gov/v1/gov.proto proto/cosmos/base/query/v1beta1/pagination.proto proto/cosmos/base/v1beta1/coin.proto proto/google/api/annotations.proto proto/google/protobuf/timestamp.proto"
+  },
+  "keywords": [
+    "governance",
+    "cosmoshub",
+    "proposal"
+  ],
+  "author": "iricehasan",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.3",
+    "axios": "^1.9.0",
+    "csv-writer": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "ts-node": "^10.9.2",
+    "ts-proto": "^2.7.0",
+    "typescript": "^5.8.3"
+  }
+}

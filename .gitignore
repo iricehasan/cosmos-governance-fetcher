@@ -1,0 +1,48 @@
+# Node dependencies
+/node_modules/
+
+# Build output
+/dist/
+/build/
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Generated code (if you prefer to regenerate in CI rather than commit it)
+/generated/
+
+# Protobuf build artifacts (if any)
+/**/*.pb.js
+/**/*.pb.ts
+
+# Environment files
+.env
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Coverage reports
+/coverage/
+/nyc_output/
+
+# IDE / editor settings
+.vscode/
+.idea/
+/*.code-workspace
+
+# OS temp files
+.DS_Store
+Thumbs.db
+
+# Misc
+/*.local
+
+# Ignore local CSV data files
+*.csv
+
+# Ignore protobuf definitions and TS‐proto output
+proto/
+generated/
