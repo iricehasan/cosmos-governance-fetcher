@@ -12,4 +12,8 @@ export const chains: ChainConfig[] = [
     name: "injective",
     grpcEndpoint: "sentry.chain.grpc.injective.network:443",
   },
+  {
+    name: "dydx",
+    grpcEndpoint: "dydx-grpc.publicnode.com:443",
+  },
 ];
