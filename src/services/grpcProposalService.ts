@@ -18,7 +18,10 @@ export async function fetchProposalsGRPC(
   grpcUrl: string
 ): Promise<ProposalModel[]> {
   // Instantiate the v1 gRPC client
-  const client = new QueryClient(grpcUrl, credentials.createSsl());
+  const client = new QueryClient(grpcUrl, credentials.createSsl(), {
+    "grpc.max_receive_message_length": 15 * 1024 * 1024, // 15 MB
+    "grpc.max_send_message_length": 10 * 1024 * 1024, // 10 MB
+  });
 
   const allProposals: ProposalModel[] = [];
   // Always keep pagination.key as a Buffer (not Uint8Array)
