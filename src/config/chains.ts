@@ -20,4 +20,8 @@ export const chains: ChainConfig[] = [
     name: "celestia",
     grpcEndpoint: "celestia-grpc.publicnode.com:443",
   },
+  {
+    name: "mantra",
+    grpcEndpoint: "mantra-grpc.publicnode.com:443",
+  },
 ];
