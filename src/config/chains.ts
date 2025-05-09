@@ -16,4 +16,8 @@ export const chains: ChainConfig[] = [
     name: "dydx",
     grpcEndpoint: "dydx-grpc.publicnode.com:443",
   },
+  {
+    name: "celestia",
+    grpcEndpoint: "celestia-grpc.publicnode.com:443",
+  },
 ];
